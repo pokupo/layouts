@@ -1,0 +1,243 @@
+.pkp-container
+    .selecter
+        position relative
+        display block
+        margin 13px 0 0 0
+        z-index 1
+        width 350px
+        &:focus
+            outline none
+        &.open
+            z-index 3
+            .selecter-selected
+                z-index 51
+                border-radius 3px 3px 0 0
+        &.cover
+            .selecter-options
+                border-width 1px
+                top 0
+                border-radius 3px
+                .selecter-item
+                    &.first
+                        border-radius 3px 3px 0 0
+            &.open
+                .selecter-selected
+                    z-index 49
+                    border-radius 3px 3px 0 0
+        &.bottom
+            .selecter-options
+                top auto
+                bottom 100%
+                border-width 1px 1px 0
+            .selecter-item
+                &:last-child
+                    border none
+            &.open
+                .selecter-selected
+                    border-radius 0 0 3px 3px
+                .selecter-options
+                    border-radius 3px 3px 0 0
+            .cover
+                .selecter-options
+                    top auto
+                    bottom 0
+                &.open
+                    .selecter-selected
+                        border-radius 3px
+                    .selecter-options
+                        border-radius 3px
+        &.multiple
+            .selecter-options
+                width 100%
+                position static
+                border-width 1px
+                display block
+                border-radius 3px
+        &.disabled
+            .selecter-selected
+                background #ffffff
+                border-color #cccccc
+                color #cccccc
+                cursor default
+            .selecter-options
+                background #ffffff
+                border-color #cccccc
+
+    .selecter,
+    .selecter *
+        -webkit-user-select none !important
+        -moz-user-select none !important
+        -ms-user-select none !important
+        user-select none !important
+
+    .selecter,
+    .selecter *,
+    .selecter *:before,
+    .selecter *:after
+        box-sizing border-box
+
+    .selecter-element
+        width 100%
+        height 100%
+        position absolute
+        left 0
+        opacity 0
+        z-index -1
+
+    .selecter-element,
+    .selecter-element:focus
+        outline none
+        -webkit-tap-highlight-color rgba(255, 255, 255, 0)
+        -webkit-tap-highlight-color transparent
+
+    .no-opacity
+        .selecter-element
+            left -999999px
+        .selecter-options
+            width auto
+
+    .selecter-selected
+        position relative
+        background #ffffff
+        border 1px solid #cccccc
+        color #222222
+        cursor pointer
+        display block
+        font-size 13px
+        margin 0
+        overflow hidden
+        padding 13.5px 15px
+        text-overflow clip
+        z-index 2
+        border-radius 3px
+        font: 18px 'OpenSans', Arial, sans-serif
+        &:after
+            height 100%
+            width 50px
+            position absolute
+            background #ccc
+            right 0
+            top 0
+            content ''
+            display block
+            margin auto 0
+        &:before
+            width 16px
+            height 10px
+            content ''
+            display block
+            position absolute
+            right 16px
+            top 19px
+            background url($select_arrow_bottom_image);
+            background-position-x $select_arrow_bottom_offset_x
+            background-position-y $select_arrow_bottom_offset_y
+            z-index 2
+    .open .selecter-selected
+        &:before
+            background url($select_arrow_top_image)
+            background-position-x $select_arrow_top_offset_x
+            background-position-y $select_arrow_top_offset_y
+
+    .no-touch
+        .selecter-selected
+            &:hover
+                color #333333
+        .selecter
+            &.disabled
+                .selecter-selected
+                    &:hover
+                        color #cccccc
+
+    .selecter-options
+        width 100%
+        max-height 260px
+        position absolute
+        top 100%
+        left 0
+        border 1px solid #cccccc
+        border-width 0 1px 1px
+        background-color #ffffff
+        display none
+        margin 0
+        overflow auto
+        overflow-x hidden
+        padding 0
+        z-index 50
+        border-radius 0 0 3px 3px
+        &.scroller
+            position absolute
+            overflow hidden
+            .scroller-content
+                max-height 260px
+                padding 0
+
+    .selecter-group
+        border-bottom 1px solid #cccccc
+        color #999999
+        display block
+        font-size 11px
+        padding 10px 15px
+        text-transform uppercase
+
+    .selecter-item
+        width 100%
+        background #ffffff
+        color #222222
+        cursor pointer
+        display block
+        margin 0
+        overflow hidden
+        padding 12.5px 15px
+        text-decoration none
+        text-overflow ellipsis
+        font 13px 'OpenSans', Arial, sans-serif
+        &.placeholder
+            display none
+        &.selected
+            color: #999999
+        &.disabled
+            color #999999
+            cursor default
+        &:hover
+            background #e6e6e6
+        &:first-child
+            border-radius 0
+        &:last-child
+            border-bottom 0
+            border-radius 0 0 2px 2px
+
+    .no-touch .selecter-item:hover,
+    .no-touch .selecter-item.selected:hover
+        color #333333
+        background-color #cccccc
+
+    .selecter-item.disabled,
+    .no-touch .selecter-item.disabled:hover
+        color #cccccc
+        background-color #ffffff
+
+    .selecter.open .selecter-selected,
+    .selecter.focus .selecter-selected
+        background-color #ffffff
+
+    .selecter.disabled .selecter-group,
+    .selecter.disabled .selecter-item
+        border-color #cccccc
+        color #cccccc
+        cursor default
+
+    .selecter.disabled .selecter-item.selected,
+    .no-touch .selecter.disabled .selecter-item.selected:hover
+        background #fafafa
+
+    .selecter.disabled .selecter-item,
+    .no-touch .selecter.disabled .selecter-item:hover
+        color #cccccc
+        background-color #ffffff
+        
+@media screen and (max-width: 640px) {
+    .pkp-container .selecter {
+        width: 100%;
+    }
+}
