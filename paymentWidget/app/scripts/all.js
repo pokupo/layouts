@@ -1,3 +1,5 @@
+$('html').addClass('pkp_html');
+$('body').addClass('pkp_body');
 $(document).ready(function() {
     /*scrollbar*/
     $(".j-scroll").mCustomScrollbar();
@@ -20,24 +22,23 @@ $(document).ready(function() {
         var errorMsg = input.siblings('.pkp-error-msg'); 
         if(input.val().length === 0) {
             input.addClass('pkp-input_error');
-            errorMsg.text('Заполните поле').fadeIn();
+            errorMsg.text('Обязательное поле').fadeIn();
             return false;
         }  
         if(!pattern.test(input.val())) {
             input.addClass('pkp-input_error');
-            errorMsg.text('Обязательное поле').fadeIn();
+            errorMsg.text('Введите e-mail корректно').fadeIn();
             return false;
         }
         if(pattern.test(input.val())) {
             input.removeClass('pkp-input_error');
             errorMsg.fadeOut();
-            return false;
         }
     });  
 
     /* tooltips */
     function toolTips() {
-        if($('.pkp-container').innerWidth() > 768){
+        if(window.innerWidth > 799){
             $('.pkp-payment-method .pkp-payment-method__item:nth-child(3n + 1)').each(function(){
                 $(this).find('.pkp-tooltip__content').removeAttr('class').addClass('pkp-tooltip__content pkp-tooltip__content_left');
             });
@@ -49,7 +50,7 @@ $(document).ready(function() {
             });
         }
 
-        if($('.pkp-container').innerWidth() < 768 && $('.pkp-container').innerWidth() > 578){
+        if(window.innerWidth < 799 && window.innerWidth > 595){
             $('.pkp-payment-method .pkp-payment-method__item:nth-child(2n+1)').each(function(){
                 $(this).find('.pkp-tooltip__content').removeAttr('class').addClass('pkp-tooltip__content pkp-tooltip__content_left');
             });
@@ -58,15 +59,15 @@ $(document).ready(function() {
             });
         }
 
-        if($('.pkp-container').innerWidth() < 578){
+        if(window.innerWidth < 595){
             $('.pkp-payment-method .pkp-payment-method__item').each(function(){
                 $(this).find('.pkp-tooltip__content').removeAttr('class').addClass('pkp-tooltip__content pkp-tooltip__content_center');
             });
         }
     }
     toolTips();
+
     $(window).on('resize', function(){
         toolTips();
     });
-
 });

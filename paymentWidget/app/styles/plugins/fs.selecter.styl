@@ -1,4 +1,4 @@
-.pkp-container
+.pkp_html .pkp_body #pkp-container
     .selecter
         position relative
         display block
@@ -110,7 +110,8 @@
         text-overflow clip
         z-index 2
         border-radius 3px
-        font: 18px 'OpenSans', Arial, sans-serif
+        font 18px 'OpenSans', Arial, sans-serif
+        font-weight 400
         &:after
             height 100%
             width 50px
@@ -192,6 +193,7 @@
         text-decoration none
         text-overflow ellipsis
         font 13px 'OpenSans', Arial, sans-serif
+        font-weight 400
         &.placeholder
             display none
         &.selected
@@ -237,7 +239,7 @@
         background-color #ffffff
         
 @media screen and (max-width: 640px) {
-    .pkp-container .selecter {
+    #pkp-container .selecter {
         width: 100%;
     }
 }

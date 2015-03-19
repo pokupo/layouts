@@ -70,15 +70,6 @@ module.exports = function (grunt) {
                     filter: 'isFile'
                 }]
             },
-            fonts: {
-                files: [{
-                    expand: true,
-                    cwd: 'app/fonts',
-                    src: '*',
-                    dest: 'dist/fonts',
-                    filter: 'isFile'
-                }]
-            },
             scripts: {
                 files: [{
                     expand: true,
@@ -150,11 +141,7 @@ module.exports = function (grunt) {
             scripts: {
                 files: ['app/scripts/**/*.js', '!app/scripts/libs/**/*'],
                 tasks: ['newer:copy:scripts']
-            },
-            copyFonts: {
-                files: ['app/fonts/*'],
-                tasks: ['newer:copy:fonts']
-            },
+            }
         }
 	});
 

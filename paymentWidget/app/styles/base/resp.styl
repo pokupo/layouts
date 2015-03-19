@@ -1,68 +1,78 @@
-@media screen and (max-width: 800px) {
-    .pkp-receipt-form__grid_50 {
-        margin-bottom: 20px;
+.pkp_html .pkp_body #pkp-container
+    @media screen and (max-width: 799px) {
+        .pkp-receipt-form__grid_50 {
+            margin-bottom: 20px;
+        }
+        .pkp-payment-method {
+            text-align: center;
+        }
+        .pkp-payment-method__item {
+            margin: 0 10px 20px 10px;
+        }
+        .pkp-tooltip__content_left {
+            width: 380px;
+        }
+        .pkp-tooltip__content_right {
+            width: 380px;
+        }
     }
-}
-@media screen and (max-width: 784px) {
-    .pkp-payment-method {
-        text-align: center;
+.pkp_html .pkp_body #pkp-container
+    @media screen and (max-width: 784px) {
+        .pkp-tooltip__content_left {
+            width: 280px;
+        }
+        .pkp-tooltip__content_right {
+            width: 280px;
+        }
+        .pkp-footer {
+            text-align: center;
+        }
+        .pkp-btn_another-payment {
+            margin: 35px auto 40px;
+        }
     }
-    .pkp-tooltip__content_left {
-        width: 280px;
+.pkp_html .pkp_body #pkp-container
+    @media screen and (max-width: 715px) { 
+        .pkp-payment-method__item_small {
+            float: left;
+            margin-left: 0;
+            margin-right: 100px;
+        }
+        .pkp-payment-method__item_small .pkp-tooltip__content{
+            width: 460px;
+            right: -215px;
+        }
+        .pkp-payment-method__item_small .pkp-tooltip__content:after {
+            right: 215px;
+        }
     }
-    .pkp-tooltip__content_right {
-        width: 280px;
+.pkp_html .pkp_body #pkp-container
+    @media screen and (max-width: 640px) {
+        .pkp-tooltip__content_center {
+            width: 460px;
+            left: -313px;
+        }
+        .pkp-tooltip__content_center:after {
+            right: 127px;
+        }
+        .pkp-tooltip__content_center_comments {
+            width: 460px;
+            right: -210px;
+        }
+        .pkp-tooltip__content_center_comments:after {
+            right: 210px;
+        }
+        .pkp-btn_back {
+            padding: 13px 108px;
+            margin-right: 0;
+        }
+        .pkp-payment-method {
+            text-align: center;
+        }
+        .pkp-receipt-form__grid_50 {
+            width: 100%;
+        }
+        .pkp-receipt-form__input {
+            width: 100%;
+        }
     }
-    .pkp-payment-method__item {
-        margin: 0 10px 20px 10px;
-    }
-    .pkp-footer {
-        text-align: center;
-    }
-    .pkp-btn_another-payment {
-        margin: 35px auto 40px;
-    }
-}
-@media screen and (max-width: 715px) { 
-    .pkp-payment-method__item_small {
-        float: left;
-        margin-left: 0;
-        margin-right: 100px;
-    }
-    .pkp-payment-method__item_small .pkp-tooltip__content{
-        width: 460px;
-        right: -215px;
-    }
-    .pkp-tooltip__content:after {
-        right: 215px;
-    }
-}
-@media screen and (max-width: 640px) {
-    .pkp-tooltip__content_center {
-        width: 460px;
-        left: -313px;
-    }
-    .pkp-tooltip__content:after {
-        right: 203px;
-    }
-    .pkp-tooltip__content_center:after {
-        right: 127px;
-    }
-    .pkp-tooltip__content_center_comments {
-        width: 460px;
-        right: -203px;
-    }
-    .pkp-btn_back {
-        padding: 13px 108px;
-        margin-right: 0;
-    }
-    .pkp-payment-method {
-        text-align: center;
-    }
-    .pkp-receipt-form__grid_50 {
-        width: 100%;
-    }
-    .pkp-receipt-form__input {
-        width: 100%;
-    }
-}
