@@ -38,7 +38,9 @@ $(document).ready(function() {
 
     /* tooltips */
     function toolTips() {
-        if(window.innerWidth > 799){
+        var container = $('#pkp-container'),
+            containerWidth = container.outerWidth();
+        if(containerWidth < 800 && containerWidth >= 784){
             $('.pkp-payment-method .pkp-payment-method__item:nth-child(3n + 1)').each(function(){
                 $(this).find('.pkp-tooltip__content').removeAttr('class').addClass('pkp-tooltip__content pkp-tooltip__content_left');
             });
@@ -50,7 +52,8 @@ $(document).ready(function() {
             });
         }
 
-        if(window.innerWidth < 799 && window.innerWidth > 595){
+        if(containerWidth < 795 && containerWidth > 557){
+            console.log('< 799 > 595');
             $('.pkp-payment-method .pkp-payment-method__item:nth-child(2n+1)').each(function(){
                 $(this).find('.pkp-tooltip__content').removeAttr('class').addClass('pkp-tooltip__content pkp-tooltip__content_left');
             });
@@ -59,15 +62,34 @@ $(document).ready(function() {
             });
         }
 
-        if(window.innerWidth < 595){
+        if(containerWidth < 557){
             $('.pkp-payment-method .pkp-payment-method__item').each(function(){
                 $(this).find('.pkp-tooltip__content').removeAttr('class').addClass('pkp-tooltip__content pkp-tooltip__content_center');
             });
         }
     }
+
+    function media() {
+        var container = $('#pkp-container'),
+            containerWidth = container.outerWidth();
+        if(containerWidth < 800 && containerWidth > 784) {
+            container.removeAttr('class').addClass('pkp-container_800');
+        }
+        else if(containerWidth < 784 && containerWidth > 715) {
+            container.removeAttr('class').addClass('pkp-container_784');
+        }
+        else if(containerWidth < 715 && containerWidth > 640) {
+            container.removeAttr('class').addClass('pkp-container_715');
+        }
+        else if(containerWidth < 640) {
+            container.removeAttr('class').addClass('pkp-container_640');
+        }
+    }
     toolTips();
+    media();
 
     $(window).on('resize', function(){
         toolTips();
+        media();
     });
 });
