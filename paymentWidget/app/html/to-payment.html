@@ -10,6 +10,7 @@
 <body>
     <div class="pkp-wrapper">
         <div id="pkp-container">
+            <script type="text/template" class="j-template">
             <div class="pkp-clearfix">
                 <div class="pkp-payment-method__item pkp-payment-method__item_small">
                     <div class="pkp-tooltip-payment-method">
@@ -25,9 +26,13 @@
                         </div>
                     </div>
                     <div class="pkp-payment-method__content">
-                        <img class="pkp-payment-method__image" src="images/ym.jpg" alt="">
-                        <span class="pkp-span">Скорость: <strong>Мгновенно</strong></span>
-                        <span class="pkp-span">Комиссия: <strong>15 руб.</strong></span>
+                        <div class="pkp-payment-method__image">
+                            <img src="images/teasers/ym.jpg" alt="">
+                        </div>
+                        <div class="pkp-payment-method__info">
+                            <span class="pkp-span">Скорость: <strong>Мгновенно</strong></span>
+                            <span class="pkp-span">Комиссия: <strong>15 руб.</strong></span>
+                        </div>
                     </div>
                 </div>
                 <div class="pkp-payment-order">
@@ -110,13 +115,15 @@
                         <div class="pkp-receipt-form__wrap pkp-clearfix">
                             <span class="pkp-span pkp-span_required pkp-span_receipt">Список</span>
                         </div>
-                        <select name="selectName">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
+                        <div class="j-select-holder">
+                            <select class="j-pkp-select" name="selectName">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="pkp-receipt-form__row">
@@ -151,6 +158,7 @@
             <div class="pkp-footer">
                 <span class="pkp-span">Работает на основе торговой платформой <a href="#">Pokupo.ru</a></span>
             </div>
+            </script>
         </div>
     </div>
     <script src="scripts/libs/jquery-1.11.2.min.js"></script>

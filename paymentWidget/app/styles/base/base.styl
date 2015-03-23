@@ -26,12 +26,16 @@ body {
         margin-top: 8px;
         font: 18px 'Open Sans', Arial, sans-serif;
         font-weight: 400;
+        background: #fff;
     }
     #pkp-container input:focus {
         outline: none;
         border: 2px solid #177a93;
     }
 .pkp_html .pkp_body #pkp-container
+    .pkp-container_error {
+        text-align: center;
+    }
     .pkp-clearfix:after {
         content: '';
         display: block;
@@ -186,10 +190,24 @@ body {
     }
     .pkp-payment-method__content{
         text-align: center;
+        display: table;
+        width: 100%;
+    }
+    .pkp-payment-method__logo {
+        position: absolute;
+        top: 12px;
+        left: 10px;
     }
     .pkp-payment-method__image {
-        display: block;
-        margin: 0 auto 35px;
+        height: 120px;
+        vertical-align: middle;
+        display: table-cell;
+    }
+    .pkp-payment-method__info {
+        position: absolute;
+        top: 153px;
+        width: 100%;
+        left: 0;
     }
     .pkp-payment-method__pay {
         height: 50px;
@@ -423,7 +441,9 @@ body {
         border-width: 6px 5px 0 5px;
         border-color: #177a93 transparent transparent transparent;
     }
-
+    .pkp-payment-error-img-wrap {
+        margin: 34px 0 31px 0;
+    }
     .pkp-receipt-form {
         margin-top: 36px;
     }
